@@ -1,51 +1,66 @@
 # LiveKit Voice Interface Agent
 
-A real-time voice interface agent built with LiveKit for interactive communication experiences with other agents. This agent acts as a central coordinator that connects users with specialized agents to fulfill their queries.
+**Responsibility:**  
+A real-time voice interface agent that coordinates communication between users and specialized agents. Built on LiveKit with Coral Protocol integration, it enables seamless voice interaction and agent communication. 
 
-## Installation
+## Details
 
-### Prerequisites
-- Python 3.13+
-- [uv](https://docs.astral.sh/uv/) package manager
+- **Framework:** LiveKit Agents  
+- **Tools Used:** LiveKit, OpenAI LLM
+- **AI Model:** GPT-4  
+- **Date Added:** June 2025  
+- **License:** MIT  
 
-### Install uv
+
+## Install Dependencies
+
 ```bash
 pip install uv
-```
-
-### Setup Project
-1. Clone the repository
-2. Install dependencies using uv:
-```bash
 uv sync
-```
+````
 
-This will create a virtual environment and install all required dependencies including:
-- `livekit-agents[mcp,openai]~=1.0`
-- `livekit-plugins-noise-cancellation~=0.2`
-- `python-dotenv>=1.1.0`
+## Configure Environment Variables
 
-## Running the Application
+Copy the example file and update it with your credentials:
 
-### Start the Agent
 ```bash
-uv run python main.py
+cp env.example .env
 ```
 
-### Terminal Mode
-use this command to run it on terminal:
+Required environment variables:
+
+* `LIVEKIT_URL`
+* `LIVEKIT_API_KEY`
+* `LIVEKIT_API_SECRET`
+* `OPENAI_API_KEY`
+
+
+## Run Agent
+
+Run in terminal (console) mode:
+
 ```bash
 uv run python main.py console
 ```
 
-## Functionality
+## Agent Capabilities
 
-### Core Features
-- **Voice Interface**: Real-time voice communication using LiveKit's Coral voice
-- **Agent Coordination**: Acts as a central interface that connects users with specialized agents
-- **MCP Integration**: Connects to Coral Protocol to act like a Central Agent
-- **Noise Cancellation**: Built-in noise cancellation for clear voice communication
+* **Voice Interface** – Real-time voice communication via voice
+* **Agent Routing** – Acts as a central coordinator to connect users with task-specific agents
+* **MCP Integration** – Bridges communication using Coral Protocol
 
-## Environment Variables
+## Example Usage
 
-Change `.env.example` to `.env` file for environment variables
+1. Launch the voice interface agent.
+2. Speak your query naturally.
+3. The system:
+
+   * Captures your voice input
+   * Routes the query to the appropriate agent
+   * Responds using a clean, real-time voice channel
+
+## Creator Details
+
+* **Name:** Ahsen Tahir
+* **Contact:** [ahsen.t@coralprotocol.org](mailto:ahsen.t@coralprotocol.org)
+
