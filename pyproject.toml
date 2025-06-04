@@ -1,0 +1,11 @@
+[project]
+name = "livekit_interface_agent"
+version = "0.1.0"
+description = "A real-time voice interface-agent built with LiveKit for interactive communication experiences with other agents"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "livekit-agents[mcp,openai]~=1.0",
+    "livekit-plugins-noise-cancellation~=0.2",
+    "python-dotenv>=1.1.0",
+]
