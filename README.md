@@ -32,10 +32,10 @@ This will create a virtual environment and install all required dependencies inc
 uv run python main.py
 ```
 
-### Development Mode
-For development with auto-reload:
+### Terminal Mode
+use this command to run it on terminal:
 ```bash
-uv run python main.py dev
+uv run python main.py console
 ```
 
 ## Functionality
