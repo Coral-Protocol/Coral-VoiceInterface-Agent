@@ -24,7 +24,7 @@ uv sync
 Copy the example file and update it with your credentials:
 
 ```bash
-cp env.example .env
+cp .env.example .env
 ```
 
 Required environment variables:
