@@ -36,6 +36,11 @@ Required environment variables:
 * `DEEPGRAM_API_KEY` - Deepgram API key for Nova-3 STT
 * `CARTESIA_API_KEY` - Cartesia API key for Sonic-2 TTS
 
+##First download the Turn detector files
+Run this command in terminal
+```bash
+ uv run python main.py download-files
+```
 
 ## Run Agent
 
