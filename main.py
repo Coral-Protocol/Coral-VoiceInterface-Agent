@@ -71,7 +71,7 @@ async def entrypoint(ctx: agents.JobContext):
     await ctx.connect()
 
     await session.generate_reply(
-        instructions="Start by listing all connected agents and then greet the user with 'How can I assist you today?'"
+        instructions="Start by listing all connected agents and then greet the user with 'How can I assist you today?' YOU SOULD NEVER USE BOLD TEXT IN YOUR RESPONSE"
     )
 
 
