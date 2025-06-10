@@ -1,13 +1,13 @@
-# LiveKit Voice Interface Agent
+# LiveKit Voice Interface Agent (STT-LLM-TTS Pipeline)
 
 **Responsibility:**  
-A real-time voice interface agent that coordinates communication between users and specialized agents. Built on LiveKit with Coral Protocol integration, it enables seamless voice interaction and agent communication. 
+A real-time voice interface agent that provides natural voice interaction using a complete STT-LLM-TTS pipeline. Built on LiveKit with Deepgram for speech-to-text, OpenAI for language processing, and Cartesia for text-to-speech synthesis.
 
 ## Details
 
 - **Framework:** LiveKit Agents  
-- **Tools Used:** LiveKit, OpenAI LLM
-- **AI Model:** GPT-4  
+- **Tools Used:** LiveKit, Deepgram STT, OpenAI LLM, Cartesia TTS, Silero VAD
+- **AI Model:** GPT-4o-mini with Nova-3 STT and Sonic-2 TTS
 - **Date Added:** June 2025  
 - **License:** MIT  
 
@@ -29,10 +29,12 @@ cp env.example .env
 
 Required environment variables:
 
-* `LIVEKIT_URL`
-* `LIVEKIT_API_KEY`
-* `LIVEKIT_API_SECRET`
-* `OPENAI_API_KEY`
+* `LIVEKIT_URL` - Your LiveKit server URL
+* `LIVEKIT_API_KEY` - LiveKit API key  
+* `LIVEKIT_API_SECRET` - LiveKit API secret
+* `OPENAI_API_KEY` - OpenAI API key for GPT-4o-mini
+* `DEEPGRAM_API_KEY` - Deepgram API key for Nova-3 STT
+* `CARTESIA_API_KEY` - Cartesia API key for Sonic-2 TTS
 
 
 ## Run Agent
@@ -45,19 +47,28 @@ uv run python main.py console
 
 ## Agent Capabilities
 
-* **Voice Interface** – Real-time voice communication via voice
-* **Agent Routing** – Acts as a central coordinator to connect users with task-specific agents
-* **MCP Integration** – Bridges communication using Coral Protocol
+* **Speech-to-Text** – High-quality multilingual speech recognition using Deepgram Nova-3
+* **Language Processing** – Intelligent conversation handling with GPT-4o-mini
+* **Text-to-Speech** – Natural voice synthesis using Cartesia Sonic-2
+* **Voice Activity Detection** – Smart turn detection with Silero VAD
+* **Noise Cancellation** – Enhanced audio quality with LiveKit BVC
+
+## Pipeline Components
+
+1. **STT (Speech-to-Text):** Deepgram Nova-3 with multilingual support
+2. **LLM (Language Model):** OpenAI GPT-4o-mini for intelligent responses  
+3. **TTS (Text-to-Speech):** Cartesia Sonic-2 for natural voice synthesis
+4. **VAD (Voice Activity Detection):** Silero for accurate speech detection
+5. **Turn Detection:** Multilingual model for conversation flow
 
 ## Example Usage
 
 1. Launch the voice interface agent.
 2. Speak your query naturally.
 3. The system:
-
-   * Captures your voice input
-   * Routes the query to the appropriate agent
-   * Responds using a clean, real-time voice channel
+   * Captures your voice input using Deepgram STT
+   * Processes your request with OpenAI LLM
+   * Responds using natural voice synthesis via Cartesia TTS
 
 ## Creator Details
 

@@ -5,7 +5,11 @@ description = "A real-time voice interface-agent built with LiveKit for interact
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "livekit-agents[mcp,openai]~=1.0",
+    "livekit-agents[openai]~=1.0",
+    "livekit-plugins-deepgram~=0.3",
+    "livekit-plugins-cartesia~=0.3",
+    "livekit-plugins-silero~=0.3",
+    "livekit-plugins-turn-detector~=0.2",
     "livekit-plugins-noise-cancellation~=0.2",
     "python-dotenv>=1.1.0",
 ]
