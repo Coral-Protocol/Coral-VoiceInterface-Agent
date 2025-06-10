@@ -58,6 +58,8 @@ uv run python main.py console
    * Captures your voice input
    * Routes the query to the appropriate agent
    * Responds using a clean, real-time voice channel
+## Out of S2S credits of OpenAi
+incase you are out of credit for the S2S realtime api key of OpenAi you can checkout to the ``` STT-LLM-TTS-pipelines ``` branch for alternative way of running it
 
 ## Creator Details
 
