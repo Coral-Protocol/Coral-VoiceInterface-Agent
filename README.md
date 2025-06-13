@@ -1,62 +1,109 @@
 # LiveKit Voice Interface Agent (STT-LLM-TTS Pipeline)
 
-**Responsibility:**  
-A real-time voice interface agent that provides natural voice interaction using a complete STT-LLM-TTS pipeline. Built on LiveKit with Deepgram for speech-to-text, OpenAI for language processing, and Cartesia for text-to-speech synthesis.
+## [Voice Interface Agent](https://github.com/Coral-Protocol/Voice-Interface-Agent)
+
+The Voice Interface Agent is an open-source AI assistant that provides real-time voice interaction using a complete STT-LLM-TTS pipeline, enabling natural conversations with AI systems.
+
+## Responsibility
+The Voice Interface Agent enables natural, real-time voice interaction using a full STT-LLM-TTS pipeline. It leverages LiveKit for streaming, Deepgram for speech-to-text, OpenAI for language processing, and Cartesia for text-to-speech synthesis.
 
 ## Details
+- **Framework**: LiveKit Agents
+- **Tools used**: LiveKit, Deepgram STT, OpenAI LLM, Cartesia TTS, Silero VAD
+- **AI model**: GPT-4o-mini with Nova-3 STT and Sonic-2 TTS
+- **Date added**: June 2025
+- **License**: MIT
 
-- **Framework:** LiveKit Agents  
-- **Tools Used:** LiveKit, Deepgram STT, OpenAI LLM, Cartesia TTS, Silero VAD
-- **AI Model:** GPT-4o-mini with Nova-3 STT and Sonic-2 TTS
-- **Date Added:** June 2025  
-- **License:** MIT  
+## Use the Agent
 
+### 1. Clone & Install Dependencies
 
-## Install Dependencies
+<details>
 
 ```bash
+# In a new terminal clone the repository:
+git clone https://github.com/Coral-Protocol/Voice-Interface-Agent.git
+
+# Navigate to the project directory:
+cd Voice-Interface-Agent
+
+# Install uv:
 pip install uv
+
+# Install dependencies from pyproject.toml using uv:
 uv sync
-````
 
-## Configure Environment Variables
+# Copy the client sse.py from utils to mcp package (Linux/ Mac)
+cp -r utils/sse.py .venv/lib/python3.13/site-packages/mcp/client/sse.py
 
-Copy the example file and update it with your credentials:
+# OR Copy this for Windows
+cp -r utils\sse.py .venv\Lib\site-packages\mcp\client\sse.py
+```
+
+</details>
+
+### 2. Configure Environment Variables
+
+<details>
+
+Get the API Keys:
+[LiveKit](https://livekit.io/) |
+[OpenAI](https://platform.openai.com/api-keys) |
+[Deepgram](https://deepgram.com/) |
+[Cartesia](https://play.cartesia.ai/keys)
 
 ```bash
-cp env.example .env
+# Create .env file in project root
+cp -r .env.example .env
 ```
 
 Required environment variables:
-
 * `LIVEKIT_URL` - Your LiveKit server URL
-* `LIVEKIT_API_KEY` - LiveKit API key  
+* `LIVEKIT_API_KEY` - LiveKit API key
 * `LIVEKIT_API_SECRET` - LiveKit API secret
 * `OPENAI_API_KEY` - OpenAI API key for GPT-4o-mini
 * `DEEPGRAM_API_KEY` - Deepgram API key for Nova-3 STT
 * `CARTESIA_API_KEY` - Cartesia API key for Sonic-2 TTS
 
-##First download the Turn detector files
-Run this command in terminal
+</details>
+
+### 3. Download Turn Detector Files
+
+<details>
+
 ```bash
- uv run python main.py download-files
+uv run python main.py download-files
 ```
 
-## Run Agent
+</details>
 
-Run in terminal (console) mode:
+### 4. Run Agent
+
+<details>
 
 ```bash
+# Run in terminal (console) mode:
 uv run python main.py console
 ```
 
-## Agent Capabilities
+</details>
 
-* **Speech-to-Text** – High-quality multilingual speech recognition using Deepgram Nova-3
-* **Language Processing** – Intelligent conversation handling with GPT-4o-mini
-* **Text-to-Speech** – Natural voice synthesis using Cartesia Sonic-2
-* **Voice Activity Detection** – Smart turn detection with Silero VAD
-* **Noise Cancellation** – Enhanced audio quality with LiveKit BVC
+### 5. Example
+
+<details>
+
+```bash
+# Input:
+Speak your query naturally into the microphone.
+
+# Output:
+The system will:
+- Capture your voice input using Deepgram STT
+- Process your request with OpenAI LLM
+- Respond using natural voice synthesis via Cartesia TTS
+```
+
+</details>
 
 ## Pipeline Components
 
@@ -66,17 +113,8 @@ uv run python main.py console
 4. **VAD (Voice Activity Detection):** Silero for accurate speech detection
 5. **Turn Detection:** Multilingual model for conversation flow
 
-## Example Usage
-
-1. Launch the voice interface agent.
-2. Speak your query naturally.
-3. The system:
-   * Captures your voice input using Deepgram STT
-   * Processes your request with OpenAI LLM
-   * Responds using natural voice synthesis via Cartesia TTS
-
 ## Creator Details
-
-* **Name:** Ahsen Tahir
-* **Contact:** [ahsen.t@coralprotocol.org](mailto:ahsen.t@coralprotocol.org)
+- **Name**: Ahsen Tahir
+- **Affiliation**: Coral Protocol
+- **Contact**: [Discord](https://discord.com/invite/Xjm892dtt3)
 
