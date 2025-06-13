@@ -80,5 +80,5 @@ uv run python main.py console
 
 ## Creator Details
 - **Name**: Ahsen Tahir
-- **Contact**: [ahsen.t@coralprotocol.org](mailto:ahsen.t@coralprotocol.org)
+- **Contact**: [Discord](https://discord.com/invite/Xjm892dtt3)
 
