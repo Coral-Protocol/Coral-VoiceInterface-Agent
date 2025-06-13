@@ -47,7 +47,7 @@ cp -r utils\sse.py .venv\Lib\site-packages\mcp\client\sse.py
 <details>
 
 Get the API Keys:
-[LiveKit](https://livekit.io/) |
+[LiveKit](https://cloud.livekit.io/) |
 [OpenAI](https://platform.openai.com/api-keys) |
 [Deepgram](https://deepgram.com/) |
 [Cartesia](https://play.cartesia.ai/keys)
