@@ -1,68 +1,84 @@
-# LiveKit Voice Interface Agent
+## LiveKit Voice Interface Agent
 
-**Responsibility:**  
-A real-time voice interface agent that coordinates communication between users and specialized agents. Built on LiveKit with Coral Protocol integration, it enables seamless voice interaction and agent communication. 
+The LiveKit Voice Interface Agent is a real-time voice interface agent that coordinates communication between users and specialized agents. Built on LiveKit with Coral Protocol integration, it enables seamless voice interaction and agent communication.
+
+## Responsibility
+The LiveKit Voice Interface Agent acts as a central coordinator, connecting users with task-specific agents via real-time voice communication. It captures user voice input, routes queries to the appropriate agent, and responds using a clean, real-time voice channel, leveraging LiveKit and Coral Protocol for seamless integration.
 
 ## Details
+- **Framework**: LiveKit Agents
+- **Tools used**: LiveKit, OpenAI LLM
+- **AI model**: GPT-4
+- **Date added**: June 2025
+- **License**: MIT
 
-- **Framework:** LiveKit Agents  
-- **Tools Used:** LiveKit, OpenAI LLM
-- **AI Model:** GPT-4  
-- **Date Added:** June 2025  
-- **License:** MIT  
+
+## Use the Agent  
+
+### 1. Clone & Install Dependencies
+Ensure that the [Coral Server](https://github.com/Coral-Protocol/coral-server) is running on your system
+<details>
 
 
-## Install Dependencies
+Ensure you have Python and [uv](https://github.com/astral-sh/uv) installed.
 
 ```bash
+# Install `uv`:
 pip install uv
-uv sync
-````
 
-## Configure Environment Variables
+# Install dependencies from `pyproject.toml` using `uv`:
+uv sync
+```
+
+</details>
+
+### 2. Configure Environment Variables
+
+<details>
 
 Copy the example file and update it with your credentials:
 
 ```bash
-cp .env.example .env
+cp -r .env.example .env
 ```
 
 Required environment variables:
 
 * `LIVEKIT_URL`
-* `LIVEKIT_API_KEY`
-* `LIVEKIT_API_SECRET`
-* `OPENAI_API_KEY`
+* `LIVEKIT_API_KEY` ([Get LiveKit API Key](https://cloud.livekit.io/))
+* `LIVEKIT_API_SECRET` ([Get LiveKit API Secret](https://cloud.livekit.io/))
+* `OPENAI_API_KEY` ([Get OpenAI API Key](https://platform.openai.com/api-keys))
 
+</details>
 
-## Run Agent
+### 3. Run Agent
 
-Run in terminal (console) mode:
+<details>
+
+Run the agent in terminal (console) mode:
 
 ```bash
 uv run python main.py console
 ```
 
-## Agent Capabilities
+</details>
 
-* **Voice Interface** – Real-time voice communication via voice
-* **Agent Routing** – Acts as a central coordinator to connect users with task-specific agents
-* **MCP Integration** – Bridges communication using Coral Protocol
+### 4. Example
 
-## Example Usage
+<details>
 
-1. Launch the voice interface agent.
-2. Speak your query naturally.
-3. The system:
+```bash
+# Speak your query naturally after launching the agent.
 
-   * Captures your voice input
-   * Routes the query to the appropriate agent
-   * Responds using a clean, real-time voice channel
-## Out of S2S credits of OpenAi
-incase you are out of credit for the S2S realtime api key of OpenAi you can checkout to the ``` STT-LLM-TTS-pipelines ``` branch for alternative way of running it
+# The system will:
+# - Capture your voice input
+# - Route the query to the appropriate agent
+# - Respond using a clean, real-time voice channel
+```
+
+</details>
 
 ## Creator Details
-
-* **Name:** Ahsen Tahir
-* **Contact:** [ahsen.t@coralprotocol.org](mailto:ahsen.t@coralprotocol.org)
+- **Name**: Ahsen Tahir
+- **Contact**: [ahsen.t@coralprotocol.org](mailto:ahsen.t@coralprotocol.org)
 
