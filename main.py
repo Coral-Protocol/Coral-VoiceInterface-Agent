@@ -29,7 +29,7 @@ Always act as the central coordinator - you receive user requests, delegate to s
 
 async def entrypoint(ctx: agents.JobContext):
     # MCP Server configuration
-    base_url = "http://localhost:5555/devmode/exampleApplication/privkey/session1/sse"
+    base_url = os.getenv("CORAL_SERVER_URL")
     params = {
         "waitForAgents": 1,
         "agentId": "voice_assistant",
