@@ -29,10 +29,10 @@ Always act as the central coordinator - you receive user requests, delegate to s
 
 async def entrypoint(ctx: agents.JobContext):
     # MCP Server configuration
-    base_url = os.getenv("CORAL_SERVER_URL")
+    base_url = os.getenv("CORAL_SSE_URL")
     params = {
         "waitForAgents": 1,
-        "agentId": "voice_assistant",
+        "agentId": os.getenv("CORAL_AGENT_ID"),
         "agentDescription": "You are a helpful voice AI assistant."
     }
     query_string = urllib.parse.urlencode(params)
