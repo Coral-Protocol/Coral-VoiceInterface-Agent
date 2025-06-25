@@ -24,4 +24,4 @@ RUN uv venv && uv pip install --upgrade pip && uv sync --no-dev
 EXPOSE 5555
 
 # Run app with virtual environment
-CMD ["uv", "run", "python", "main.py", "console"]
+CMD ["uv", "run", "python", "main.py", "dev"]
