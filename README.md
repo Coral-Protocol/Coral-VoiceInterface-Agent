@@ -56,7 +56,7 @@ Required environment variables:
 
 </details>
 
-### 3. Run Agent
+### 3. Run Agent in Dev Mode
 
 <details>
 
@@ -65,6 +65,8 @@ Run the agent in terminal (console) mode:
 ```bash
 uv run python main.py console
 ```
+If you want to run the Agent using [Coral-Studio UI](https://github.com/Coral-Protocol/coral-studio) you can do so but it may not support Voice input and outputs from the UI and only the messages sent using Coral tools will be visible.You
+clone it and run it according to the instructions in the readme and run this agent in your terminal.
 
 </details>
 
