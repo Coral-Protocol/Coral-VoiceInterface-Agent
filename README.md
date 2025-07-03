@@ -24,10 +24,10 @@ Ensure you have Python and [uv](https://github.com/astral-sh/uv) installed.
 
 ```bash
 # In a new terminal clone the repository:
-git clone https://github.com/Coral-Protocol/Voice-Interface-Agent.git
+git clone https://github.com/Coral-Protocol/Coral-VoiceInterface-Agent.git
 
 # Navigate to the project directory:
-cd Voice-Interface-Agent
+cd Coral-VoiceInterface-Agent
 # Install `uv`:
 pip install uv
 
