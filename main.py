@@ -9,18 +9,18 @@ from livekit.plugins import (
     noise_cancellation,
 )
 
-load_dotenv()
+load_dotenv(override=True)
 
 
 class Assistant(Agent):
     def __init__(self) -> None:
         super().__init__(instructions="""You are the central interface agent that connects users with specialized agents to fulfill their queries.
-
+YOU MUST SPEAK IN ENGLISH.
 Your workflow:
 1. List available agents using `list_agents` to understand capabilities
 2. Analyze user queries and select the most appropriate agent
 3. For Coral Server information requests, handle directly using available tools
-4. For other requests: create a thread with `create_thread`, send clear instructions via `send_message`, and wait for responses with `wait_for_mentions`
+4. For other requests: create a thread with `create_thread`, send clear instructions via `send_message`, and wait for responses with `wait_for_mentions` after using send message you must keep using the wait for mentions tool until you get the response from the agent.
 5. Present agent responses back to the user in a helpful format
 6. Continue assisting with follow-up queries
 
@@ -45,8 +45,8 @@ async def entrypoint(ctx: agents.JobContext):
         mcp_servers=[
             mcp.MCPServerHTTP(
                 url=MCP_SERVER_URL,
-                timeout=10,
-                client_session_timeout_seconds=10,
+                timeout=600,
+                client_session_timeout_seconds=600,
             ),
         ]
     )
